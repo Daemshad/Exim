@@ -53,7 +53,6 @@ e.deposit(account_id=1, symbol="btc", quantity=1000)
 >> Deposit successful 
 >> Deposit successful
 ```
-
 process order qoute
 ```python
 qoute  = {
@@ -67,6 +66,13 @@ e.process_order_qoute(qoute)
 ```
 ```
 >> Order executed with id: 0
+```
+cancel order
+```python
+e.cancel(account_id=0, market="BTCUSD", order_id=0)
+```
+```
+>> Order canceled with id: 0
 ```
 get trades history
 ```python
