@@ -7,15 +7,15 @@ Exim is a stock market exchange simulator with fast limit orderbook and account 
 install using setup.py
 
 ## Usage
-  import
+### import
 ```python
 from  exim  import  Exchange
 ```
-define an exchange
+### define an exchange
 ```python
 e  =  Exchange(verbose=Ture)
 ```
-define symbols
+### define symbols
 ```python
 e.register_symbol("usd", unit_decimals=2)
 e.register_symbol("btc", unit_decimals=8)
@@ -24,14 +24,14 @@ e.register_symbol("btc", unit_decimals=8)
 >> Symbol registered: USD
 >> Symbol registered: BTC
 ```
-define markets
+### define markets
 ```python
 e.register_market(base="btc", qoute="usd")
 ```
 ```
 >> Market registered: BTCUSD
 ```
-register accounts
+### register accounts
 ```python
 e.register_account(name="Bob")
 e.register_account(name="Alice")
@@ -40,7 +40,7 @@ e.register_account(name="Alice")
 >> Account registered with id: 0
 >> Account registered with id: 1
 ```
-deposit
+### deposit
 ```python
 e.deposit(account_id=0, symbol="usd", quantity=1000000)
 e.deposit(account_id=0, symbol="btc", quantity=1000)
@@ -53,7 +53,7 @@ e.deposit(account_id=1, symbol="btc", quantity=1000)
 >> Deposit successful 
 >> Deposit successful
 ```
-process order qoute
+### process order qoute
 ```python
 qoute  = {
 	'account_id': 0,
@@ -67,14 +67,14 @@ e.process_order_qoute(qoute)
 ```
 >> Order executed with id: 0
 ```
-cancel order
+### cancel order
 ```python
 e.cancel(account_id=0, market="BTCUSD", order_id=0)
 ```
 ```
 >> Order canceled with id: 0
 ```
-get trades history
+### get trades history
 ```python
 e.get_trades(market="BTCUSD")
 ```
@@ -92,7 +92,7 @@ e.get_trades(market="BTCUSD")
 11136  1672302611604003000  16198.78  0.002434
 11137  1672302611932396000  16198.78  0.000141
 ```
-get orderbook
+### get orderbook
 ```python
 e.get_orderbook(market="BTCUSD")
 ```
@@ -111,7 +111,7 @@ price
 16235.89  0.76124634  ASK
 16239.0   3.80998147  ASK
 ```
-get all orders
+### get all orders
 ```python
 e.get_orders(account_id=0, market="BTCUSD")
 ```
@@ -130,7 +130,7 @@ id
 3      1672302604364537000   LIMIT  SELL  0.75523509  16193.15  FILLED
 0      1672302604363567000   LIMIT  SELL  3.39473274  16203.32  FILLED
 ```
-get accounts
+### get accounts
 ```python
 e.get_accounts()
 ```
@@ -140,7 +140,7 @@ id
 0     Bob   735756.2878483156  1016.14315807
 1   Alice  1264243.7121516844   983.85684193
 ```
-get wallet info
+### get wallet info
 ```python
 e.get_wallet(account_id=0)
 ```
